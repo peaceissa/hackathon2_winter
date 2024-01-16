@@ -1,4 +1,8 @@
 import json
+import time
+
+unix_timestamp = int(time.time())
+
 
 data = []
 
@@ -14,16 +18,18 @@ def analyze_list_elements(input_list):
 
         data.append(element)
 
+        
+
     # Calculate the sum of all elements in the list using a loop
     sum_of_elements = sum(input_list)
+    data.remove(element)
     print(f"The sum of all elements in the list is: {sum_of_elements}")
-
-    return sum_of_elements
+    
 
 
 
 # List of elements
-my_list = [1, 5, 7, 3, 8, 2, 6, 0]
+my_list = [1, 5, 7, 3, 8, 2, 6, 7]
 
 # Call the function with the provided list
 total = analyze_list_elements(my_list)
@@ -31,8 +37,10 @@ total = analyze_list_elements(my_list)
 if total == sum(data):
 
     group_name = input("Enter the name of your group: ")
+
+    timestamp_group_name = group_name + str(unix_timestamp)
     # Specify the file path
-    file_path = f"{group_name}_GROUP.json"
+    file_path = f"{timestamp_group_name}_GROUP.json"
 
     # Write the data to the JSON file
     with open(file_path, 'w') as json_file:
