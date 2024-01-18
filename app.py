@@ -25,7 +25,7 @@ def analyze_list_elements(input_list):
 
     # Calculate the sum of all elements in the list using a loop
     sum_of_elements = sum(input_list)
-    #data.remove(element)
+    data.remove(element)
     print(f"The sum of all elements in the list is: {sum_of_elements}")
 
 
