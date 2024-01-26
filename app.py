@@ -10,21 +10,19 @@ def process_input(u):
 
 
 
-def analyze_list_elements(input_list):
+data = [] #intialized data variable as an empty list
 
+def analyze_list_elements(input_list):
     for element in input_list:
-        
         if element % 2 == 0:
             print(f"{element} is an even number.")
         else:
             print(f"{element} is an odd number.")
-
         data.append(element)
-
     sum_of_elements = sum(input_list)
     data.remove(element)
     print(f"The sum of all elements in the list is: {sum_of_elements}")
-
+    return sum_of_elements
 
 
 
@@ -35,7 +33,7 @@ def main():
     
     total = analyze_list_elements(my_list)
 
-    if total == sum(data):
+    if total == sum(my_list): #changed the argument from data to my_list
 
         group_name = input("Enter the name of your group: ")
 
